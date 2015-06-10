@@ -41,6 +41,9 @@ use Cake\Routing\Router;
  */
 Router::defaultRouteClass('Route');
 
+/* enable extensions */
+Router::extensions(['json', 'xml']);
+
 Router::scope('/', function ($routes) {
 	/**
 	 * Here, we are connecting '/' (base path) to a controller called 'Pages',
@@ -53,6 +56,11 @@ Router::scope('/', function ($routes) {
 	 * ...and connect the rest of 'Pages' controller's URLs.
 	 */
 	$routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+
+	/* enable route for /vouchers
+	 * only controllers explicitly enabled for API use will be accessible through your API.
+	 */
+	$routes->resources('Vouchers');
 
 	/**
 	 * Connect catchall routes for all controllers.
@@ -72,10 +80,6 @@ Router::scope('/', function ($routes) {
 	 */
 	$routes->fallbacks('InflectedRoute');
 
-	/* enable route for /vouchers
-	 * only controllers explicitly enabled for API use will be accessible through your API.
-	 */
-	$routes->resources('Vouchers');
 });
 
 /**

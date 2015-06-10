@@ -202,3 +202,7 @@ DispatcherFactory::add('ControllerFactory');
 Type::build('datetime')->useLocaleParser();
 
 Plugin::load('Crud', []);
+
+Plugin::load('Crud', []);
+
+Plugin::load('Crud', []);
