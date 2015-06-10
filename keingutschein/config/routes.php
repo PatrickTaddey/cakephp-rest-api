@@ -72,7 +72,7 @@ Router::scope('/', function ($routes) {
 	 */
 	$routes->fallbacks('InflectedRoute');
 
-	/* enable route for vouchers/
+	/* enable route for /vouchers
 	 * only controllers explicitly enabled for API use will be accessible through your API.
 	 */
 	$routes->resources('Vouchers');
